@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view>
   <view class="main-center">
-    <image src="{{imageUrl}}" class="ledinfo-avatar" bindtap='turn'></image>
+    <image src="{{imageUrl}}" class="ledinfo-avatar" ></image>
     <view class="ledinfo-values">
       <text>湿度：</text><text>{{humidity}}</text><text>%</text>
       <text>温度：</text><text>{{temperature}}</text><text>℃</text>
