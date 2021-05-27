@@ -75,3 +75,9 @@ page {
     margin-top: 10rpx;
     color: rgb(128, 128, 128);
 }
+.message-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rpx;
+  height: 100rpx;
+}

@@ -67,7 +67,7 @@ Page({
     var that=this
     const options = this.initMqttOptions(deviceConfig);
     console.log(options)
-    client = mqtt.connect('wxs://productKey.iot-as-mqtt.cn-shanghai.aliyuncs.com',options)
+    client = mqtt.connect('wxs://'+`${deviceConfig.productKey}`+'.iot-as-mqtt.cn-shanghai.aliyuncs.com',options)
     client.on('connect', function () {
       console.log('连接服务器成功')
       //订阅主题(这里的主题可能会不一样，具体请查看后台设备Topic列表或使用自定义主题)
@@ -79,9 +79,10 @@ Page({
     })
 	//接收消息监听
     client.on('message', function (subTopic, message) {
-       message=message.toString()
-       message=JSON.parse(message) //将接收到的字符串进行Json格式转换
+       var messages=message.toString()
+       message=JSON.parse(messages) //将接收到的字符串进行Json格式转换
        console.log(message)
+       that.setData({message:messages})
        //通过获取的温湿度来设置显示在小程序上
        //依据不同的数据解析方式
 
@@ -94,8 +95,9 @@ Page({
   },
   offline:function(){
     //client连接断开,关闭连接
-    client.end()
-    client=""
+setTimeout((function callback() {
+   client.end();
+}).bind(this), 100);
     this.setData({
       humidity: "",
       temperature:"",

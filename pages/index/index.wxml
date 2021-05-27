@@ -41,5 +41,9 @@
     </view>
   </view>
 
+  <text class='subheading'>设备日志</text>
+  <view class='message-info background-white'>
+      <text class='text'>{{message}}</text> 
+    </view>
   </view>
   
