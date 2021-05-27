@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view>
+  <view class="main-center">
+    <image src="{{imageUrl}}" class="ledinfo-avatar" bindtap='turn'></image>
+    <view class="ledinfo-values">
+      <text>湿度：</text><text>{{humidity}}</text><text>%</text>
+      <text>温度：</text><text>{{temperature}}</text><text>℃</text>
+    </view>
+  </view>
+
+<text class='subheading'>设备身份三元组</text>
+  <view style='margin-top: 20rpx;'>
+    <view class='connect-info background-white'>
+      <text class='text'>productKey:</text> 
+      <input class='input' name='productKey' placeholder='{{productKey}}'
+      bindinput='productKeyInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>deviceName:</text> 
+      <input class='input' name='deviceName' placeholder='{{deviceName}}'
+      bindinput='deviceNameInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>deviceSecret:</text> 
+      <input class='input' name='deviceSecret' placeholder='{{deviceSecret}}'
+      bindinput='deviceSecretInput'/>
+    </view>
+  </view>
+  <view class="buttons">
+    <view  class="button-container" bindtap='online'>
+      <text class="button">设备上线</text>
+    </view>
+    <view  class="button-container" bindtap='turnon'>
+      <text class="button">开灯</text>
+    </view>
+    <view  class="button-container" bindtap='turnoff'>
+      <text class="button">关灯</text>
+    </view>
+    <view  class="button-container" bindtap='offline'>
+      <text class="button">设备下线</text>
+    </view>
+  </view>
+
+  </view>
+  
