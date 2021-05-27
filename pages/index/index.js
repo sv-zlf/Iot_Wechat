@@ -3,9 +3,9 @@
 var mqtt = require('../../utils/mqtt.min.js') //根据自己存放的路径修改
 const crypto = require('../../utils/hex_hmac_sha1.js'); 
 const deviceConfig = {
-  productKey: "a1832EXO27D",
-  deviceName: "example",
-  deviceSecret: "108b4e2dbfd38e67430b83957ac119e0",
+  productKey: "**********",
+  deviceName: "************",
+  deviceSecret: "**********",
   regionId: "cn-shanghai"
 };
 var subTopic='/sys/'+`${deviceConfig.productKey}`+'/'+`${deviceConfig.deviceName}`+'/thing/service/property/set'
