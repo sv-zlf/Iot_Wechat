@@ -1,12 +1,37 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/k_control/index",
+    "pages/t_control/index",
+    "pages/g_control/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/k_control/index",
+        "text": "空气检测",
+        "iconPath": "images/k.png",
+        "selectedIconPath": "images/k1.png"
+      },
+      {
+        "pagePath": "pages/g_control/index",
+        "text": "光照检测",
+        "iconPath": "images/g.png",
+        "selectedIconPath": "images/g1.png"
+      },
+      {
+        "pagePath": "pages/t_control/index",
+        "text": "土壤检测",
+        "iconPath": "/images/t.png",
+        "selectedIconPath": "images/t1.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "虚仿实验客户端--专家用",
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

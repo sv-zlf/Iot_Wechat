@@ -1,4 +1,7 @@
 /**app.wxss**/
+@import "icon.wxss";
+@import "main.wxss";
+@import "animation.wxss";
 .container {
   height: 100%;
   display: flex;

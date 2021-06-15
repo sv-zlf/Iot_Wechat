@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view>
+  <view class="main-center">
+    <image src="{{imageUrl}}" class="ledinfo-avatar" ></image>
+    <view class="ledinfo-values">
+      <text>光强：</text><text>{{humidity}}</text><text>klux</text>
+<!--       <text>温度：</text><text>{{temperature}}</text><text>℃</text> -->
+    </view>
+  </view>
+
+<text class='subheading'>设备身份三元组</text>
+  <view style='margin-top: 20rpx;'>
+    <view class='connect-info background-white'>
+      <text class='text'>productKey:</text> 
+      <input class='input' name='productKey' placeholder='{{productKey}}'
+      bindinput='productKeyInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>deviceName:</text> 
+      <input class='input' name='deviceName' placeholder='{{deviceName}}'
+      bindinput='deviceNameInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>deviceSecret:</text> 
+      <input class='input' name='deviceSecret' placeholder='{{deviceSecret}}'
+      bindinput='deviceSecretInput'/>
+    </view>
+  </view>
+
+  <view style='margin-top: 20rpx;'>
+  </view>
+
+  <text class='subheading'>标识符设置</text>
+  <view style='margin-top: 20rpx;'>
+    <view class='connect-info background-white'>
+      <text class='text'>遮阳罩标识符:</text> 
+      <input class='input' name='ControlKey' placeholder='{{ControlKey}}'
+      bindinput='ControlInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>光强标识符:</text> 
+      <input class='input' name='valueKey' placeholder='{{valueKey}}'
+      bindinput='valueInput'/>
+    </view>
+  </view>
+
+  <view class="buttons">
+    <button class="cu-btn  round line{{bordersize?bordersize:''}}-green animation-{{animation=='shakes1'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='online'>设备上线 </button>
+    <button class="cu-btn  round line{{bordersize?bordersize:''}}-blue animation-{{animation=='shakes2'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='turnon'>开遮阳罩 </button>
+    
+    <button class="cu-btn  round line{{bordersize?bordersize:''}}-blue animation-{{animation=='shakes3'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='turnoff'>关遮阳罩 </button>
+    
+      <button class="cu-btn  round line{{bordersize?bordersize:''}}-red animation-{{animation=='shakes4'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='offline'>设备下线 </button>
+  </view>
+
+  <text class='subheading'>使用说明</text>
+  <view class='message-info background-white'>
+      <text >1、专家首先按照实验操作流程，在“光照检测”虚仿场景内创建用于感知光强值的物联网设备、以及用于控制遮阳罩的物联网设备；
+2、其次，需在阿里物联网云上创建三个物联网设备，其中A、B对应于两个虚仿场景内的Arduino设备，C对应于微信小程序；
+3、完成虚仿场景内的编程，并完成云上规则引擎配置（A发布->C订阅，C发布->B订阅）；
+4、将云上设备C的三元组填入本窗口内（支持直接粘贴），点击“设备上线”；同时，点击虚仿场景的“运行”按钮；之后，虚仿场景的光强值会显示在本界面上，点击按钮可以开关遮阳棚。</text> 
+    </view>
+  </view>
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+ 设备未上线！！
+    </view>
+  </view>
+</view>
+  

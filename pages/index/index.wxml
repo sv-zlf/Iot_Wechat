@@ -1,49 +1,25 @@
-<!--index.wxml-->
-<view>
-  <view class="main-center">
-    <image src="{{imageUrl}}" class="ledinfo-avatar" ></image>
-    <view class="ledinfo-values">
-      <text>湿度：</text><text>{{humidity}}</text><text>%</text>
-      <text>温度：</text><text>{{temperature}}</text><text>℃</text>
-    </view>
-  </view>
+<!--pages/index/index.wxml-->
+<view class="empty_tip ">
+<view class=" empty_tip title">
+<view class='imagesize'>
+  <image src="/images/logo.png" class='in-image'   >
+  </image>
+</view>
+<text class="text-black text-bold .text-xl" style="margin: 20rpx 0rpx 25rpx 10rpx ">基于物联网云的农业物联网虚拟仿真实验</text>
+<text class="text-black text-bold .text-xl" style="margin: 5rpx 0rpx 0rpx 0rpx ">专家用测试客户端</text>
 
-<text class='subheading'>设备身份三元组</text>
-  <view style='margin-top: 20rpx;'>
-    <view class='connect-info background-white'>
-      <text class='text'>productKey:</text> 
-      <input class='input' name='productKey' placeholder='{{productKey}}'
-      bindinput='productKeyInput'/>
-    </view>
-    <view class='connect-info background-white'>
-      <text class='text'>deviceName:</text> 
-      <input class='input' name='deviceName' placeholder='{{deviceName}}'
-      bindinput='deviceNameInput'/>
-    </view>
-    <view class='connect-info background-white'>
-      <text class='text'>deviceSecret:</text> 
-      <input class='input' name='deviceSecret' placeholder='{{deviceSecret}}'
-      bindinput='deviceSecretInput'/>
-    </view>
-  </view>
-  <view class="buttons">
-    <view  class="button-container" bindtap='online'>
-      <text class="button">设备上线</text>
-    </view>
-    <view  class="button-container" bindtap='turnon'>
-      <text class="button">开灯</text>
-    </view>
-    <view  class="button-container" bindtap='turnoff'>
-      <text class="button">关灯</text>
-    </view>
-    <view  class="button-container" bindtap='offline'>
-      <text class="button">设备下线</text>
-    </view>
-  </view>
+</view>
 
-  <text class='subheading'>设备日志</text>
-  <view class='message-info background-white'>
-      <text class='text'>{{message}}</text> 
+<view class="padding text-left"  style="margin: 50rpx 0rpx 0rpx 0rpx ">
+      <view class="padding-xl radius shadow bg-white">
+        <text class="text-black text-bold .text-xl" >使用说明：\n</text> 
+        <text class=' text-Grey'>1、由于农业物联网虚仿实验过程中，学生需要独立完成“虚仿场景设备开发、物联网云配置、微信小程序开发”三部分实验工作，整个开发过程耗时较长。为节约专家时间，我们专门开发了这个小程序，便于专家进行实验效果的快速测试。\n</text> 
+        <text class='text'>2、专家请首先使用支持Google内核的浏览器，用申报书内所提供的账号登陆http://maker.ujs.edu.cn，点击“虚拟实验”，在点击开始实验，打开实验界面；</text> 
+        <text class='text'>3、实验界面内的三个农业物联网场景，其中“空气检测场景”已经完成设备创建，专家可以直接在此小程序中测试；“光照检测场景”与“土壤湿度场景”是初始状态，专家可以动手全程完成实验过程。</text> 
+      </view>
+      
+</view>
+<view class='empty_tip end'>
+  <button bindtap="gotoMain" style="margin: 30rpx 0rpx 0rpx 0rpx " class="cu-btn round bg-olive .text-lg"  >进入实验</button>
     </view>
-  </view>
-  
+</view>

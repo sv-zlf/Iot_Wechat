@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view>
+  <view class="main-center">
+    <image src="{{imageUrl}}" class="ledinfo-avatar" ></image>
+    <view class="ledinfo-values">
+      <text>湿度：</text><text>{{humidity}}</text><text>%</text>
+<!--       <text>温度：</text><text>{{temperature}}</text><text>℃</text> -->
+    </view>
+  </view>
+
+<text class='subheading'>设备身份三元组</text>
+  <view style='margin-top: 20rpx;'>
+    <view class='connect-info background-white'>
+      <text class='text'>productKey:</text> 
+      <input class='input' name='productKey' placeholder='{{productKey}}'
+      bindinput='productKeyInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>deviceName:</text> 
+      <input class='input' name='deviceName' placeholder='{{deviceName}}'
+      bindinput='deviceNameInput'/>
+    </view>
+    <view class='connect-info background-white'>
+      <text class='text'>deviceSecret:</text> 
+      <input class='input' name='deviceSecret' placeholder='{{deviceSecret}}'
+      bindinput='deviceSecretInput'/>
+    </view>
+  </view>
+  <view class="buttons">
+    <button class="cu-btn  round line{{bordersize?bordersize:''}}-green animation-{{animation=='shakes1'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='online'>设备上线 </button>
+    <button class="cu-btn  round line{{bordersize?bordersize:''}}-blue animation-{{animation=='shakes2'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='turnon'>开排风扇 </button>
+    
+    <button class="cu-btn  round line{{bordersize?bordersize:''}}-blue animation-{{animation=='shakes3'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='turnoff'>关排风扇 </button>
+    
+      <button class="cu-btn  round line{{bordersize?bordersize:''}}-red animation-{{animation=='shakes4'?'shake':''}} animation-reverse margin-sm basis-sm shadow" bindtap='offline'>设备下线 </button>
+
+  </view>
+
+  <text class='subheading'>使用说明</text>
+  <view class='message-info background-white'>
+      <text>1、请在虚仿实验内点击“空气检测”场景左上角的三角形“运行”按钮，运行该虚仿场景内设备;\n2、在此小程序界面上，点击“设备上线”，小程序就可以与虚仿场景内的两个物联网设备通信。此时，小程序界面上“空气湿度”会显示虚仿场景中的湿度值；点击“开排风扇”或“关排风扇”，虚仿场景中的排风扇会打开或关闭；\n3、使用结束后，请点击“设备下线”。</text> 
+    </view>
+  </view>
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+ 设备未上线！！
+    </view>
+  </view>
+</view>
+  
